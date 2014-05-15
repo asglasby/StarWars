@@ -1,0 +1,28 @@
+﻿@model starWars54.Models.HomeVM
+@{
+    ViewBag.Title = "Home Page";
+}
+@Model.Quote
+<h2>@Model.Character.Name</h2>
+<table>
+    @foreach (var character in Model.CharList)
+    {
+        <tr>
+            <td>@character.Name</td>
+            <td>@character.Bio</td>
+            <td>@character.Pic</td>
+            <td>@character.GetType().Name</td>
+            @{
+        if (character.GetType().Name == "Jedi")
+        {
+           <td><a href="/Home/JediDetails/@character.Id"><img height="50px" width="50px" src="http://img1.wikia.nocookie.net/__cb20090320221709/starwars/images/5/59/ThreeJedi.jpg" /></a></td>
+        }
+        else
+        {
+            <td><a href="/Home/BHDetails/@character.Id"><img height="50px" width="50px" src="http://blog.mondotees.com/wp-content/uploads/2010/09/BountyHunterWave1.jpg" /></a></td>
+        } 
+            }
+        </tr>
+    }
+</table>
+@Model.CharList

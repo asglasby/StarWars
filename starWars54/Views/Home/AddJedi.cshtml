@@ -1,0 +1,20 @@
+﻿@model starWars54.Models.Jedi
+@{
+    ViewBag.Title = "Add Jedi";
+}
+
+<h2>Add Jedi</h2>
+
+<form method="post" >
+ 
+ Name:   @Html.TextBoxFor(x => x.Name)
+   Pic: @Html.TextBoxFor(x=>x.Pic)
+   Rank: @Html.TextBoxFor(x => x.Rank)
+   Lightsaber:  @Html.TextBoxFor(x => x.SaberColor)
+   Bio: @Html.TextBoxFor(x => x.Bio)
+   Affiliation: @Html.TextBoxFor(x => x.Affiliation)
+
+    <input type="submit" value="Send" />
+</form>
+
+
